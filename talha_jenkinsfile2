@@ -12,7 +12,7 @@ pipeline{
        }
       stage ('Compile Stage'){
          steps{
-               bat "mvn -Dmaven.test.failure.ignore clean install"
+               bat "mvn clean install"
          }
       }
    }
