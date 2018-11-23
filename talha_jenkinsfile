@@ -1,13 +1,15 @@
 node {
    def mvnHome
+   def javaHome
    stage('Preparation') { 
       git 'https://github.com/talhakhannnnn/jenkins-practice-repo.git'
       
       mvnHome = tool 'mvn-3.6.0'
+      javaHome = tool 'myJDK'
    }
    stage('Build') {
       echo 'Building'
-      bat(/"$C:\Java\jdk1.8.0_121\bin\java" -version/)
+      bat(/"${javaHome}\bin\java" -version/)
       //bat(/"${mvnHome}\bin\mvn" clean package/)
    }
    
