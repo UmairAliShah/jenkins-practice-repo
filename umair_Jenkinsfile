@@ -1,13 +1,19 @@
-node {
-   def mvnHome
-   stage('Preparation') { 
-      git 'https://github.com/talhakhannnnn/jenkins-practice-repo.git'
-      
-      mvnHome = tool 'Apache Maven 3.6.0'
+pipeline{
+   agent any
+   tools {
+        maven 'Apache Maven 3.6.0'
+        jdk 'JDK 10'
    }
-   stage('Build') {
-      echo 'Building'
-      bat(/"${mvnHome}\bin\mvn" clean package/)
+   stages {
+      stage('Preparation') { 
+         steps{
+           git 'https://github.com/talhakhannnnn/jenkins-practice-repo.git'
+         }
+       }
+      stage ('Compile Stage'){
+         steps{
+               bat "mvn clean install"
+         }
+      }
    }
-   
 }
