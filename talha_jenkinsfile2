@@ -2,7 +2,7 @@ pipeline{
    agent any
    tools {
         maven 'mvn-3.6.0'
-        jdk 'myJDk'
+        jdk 'myJDK'
    }
    stages {
       stage('Pulling') { 
