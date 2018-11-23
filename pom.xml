@@ -47,7 +47,6 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-			<testFailureIgnore>true</testFailureIgnore>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
                 </configuration>
                 <executions>
