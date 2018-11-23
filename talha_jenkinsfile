@@ -5,11 +5,11 @@ node {
       git 'https://github.com/talhakhannnnn/jenkins-practice-repo.git'
       
       mvnHome = tool 'mvn-3.6.0'
-      javaHome = tool 'myJDK'
+      jdk = tool 'myJDK'
    }
    stage('Build') {
       echo 'Building'
-      bat(/"${javaHome}\bin\java" -version/)
+      //bat(/"${javaHome}\bin\java" -version/)
       bat(/"${mvnHome}\bin\mvn" clean package/)
    }
    
