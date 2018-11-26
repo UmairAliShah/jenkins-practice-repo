@@ -5,15 +5,21 @@ pipeline{
         jdk 'myJDK'
    }
    stages {
-      stage('Pulling') { 
+      stage('Pull') { 
          steps{
            git 'https://github.com/talhakhannnnn/jenkins-practice-repo.git'
          }
        }
-      stage ('Compile Stage'){
+      stage ('Build'){
          steps{
                bat "mvn clean install"
          }
+      } 
+      stage ('Test'){
+         steps{
+               bat "mvn test"
+         }
       }
+      
    }
 }
