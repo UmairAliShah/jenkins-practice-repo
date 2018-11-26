@@ -9,6 +9,7 @@ public class TestSumFunction {
 
     @Test
     public void testSum() {
+        System.out.println("performing tests");
         SumFunction sumFunction = new SumFunction();
         int result = sumFunction.handleRequest(new Input(4, 5), Mockito.mock(Context.class));
         Assert.assertEquals(9, result);
